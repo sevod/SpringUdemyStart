@@ -1,5 +1,7 @@
 # SpringUdemy
 11.06.2020
+IoC Injection of Controll
+
 Commit 16
 Базовый каркас, продемонстрировано внедрение интерфейса
 git checkout -b newbrench
@@ -30,3 +32,30 @@ ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("app
 Coach theCoach = context.getBean("myCoach", Coach.class);
 Обязательно закрываем контекст после окончания работы
 context.close();
+
+B20 Ничего особенного
+
+12.06.2020
+B21 (не коммител)
+-Spring Dependency injection (DI)
+--Constructor injection
+--Setter injection
+
+B22
+
+B23
+
+B24 (не коммител)
+Реализуем DI через конструктор
+Создаем конструктор в нужном классе и меняем файл applicationContext.xml
+    <bean id="myCoach"
+    	class="org.sevod.springdemo.BaseballCoach">
+    	
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortune"></constructor-arg>
+    </bean>
+	
+B25
+В HelloSpringApp.java вызываем System.out.println(theCoach.getDailyFortune());
+
+
