@@ -98,10 +98,28 @@ B30
    		<property name="emailAddress" value="thebestcoach@sevod.com"></property>
    		<property name="team" value="Sunriser Hyderabad"></property>
     </bean>
-name задает имено наших set методов. value значение аргументов сетера.
+name задает имена наших set методов. value значение аргументов сетера.
 В SetterDemoApp.java запускаем тест
 
 B31
+
+Injection Values frome Properties File
+
+1) создаем Properties File
+2) поключаем его в Spring config file applicationContext.xml
+3) прописываем Properties в этот файл
+
+B32
+
+1) Создаем sport.properties
+2) поключаем
+	<context:property-placeholder location="classpath:sport.properties"/>
+3) 	меняем поле value
+   		<!-- inject literal values -->
+   		<property name="emailAddress" value="${foo.email}"></property>
+   		<property name="team" value="${foo.team}"></property>
+
+
 
 
 
