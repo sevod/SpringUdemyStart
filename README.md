@@ -58,4 +58,51 @@ B24 (не коммител)
 B25
 В HelloSpringApp.java вызываем System.out.println(theCoach.getDailyFortune());
 
+13.06.2020
+
+B26
+-Setter injection
+
+B27
+
+B28
+
+Для Setter injection обязательно создаем конструктор без аргументов. Он будет вызываться spring ом.
+Создаем set-ер "setFortuneService" в нужном нам классе, в файл applicationContext.xml добавляем код 
+    <bean id="myCricketCoath"
+    	class="org.sevod.springdemo.CricketCoach">
+   		
+   		<!-- set up setter injection -->
+   		<property name="fortuneService" ref="myFortune"></property>
+    </bean>
+"fortuneService" соответсвует названию set-ера "setFortuneService". Разница подставляется автоматически. ref="myFortune" это аргументы сетера. Берутся из нашего xml.
+Для примера с сетером создадим класс springdemo.
+
+
+B29
+
+Injection Literal Values
+
+B30
+
+1) Создаем set методы
+2) Конфигурируем the injection in Spring config file applicationContext.xml
+в ранее существовавший bean добавляем поля property
+    <bean id="myCricketCoath"
+    	class="org.sevod.springdemo.CricketCoach">
+   		
+   		<!-- set up setter injection -->
+   		<property name="fortuneService" ref="myFortune"></property>
+   		
+   		<!-- inject literal values -->
+   		<property name="emailAddress" value="thebestcoach@sevod.com"></property>
+   		<property name="team" value="Sunriser Hyderabad"></property>
+    </bean>
+name задает имено наших set методов. value значение аргументов сетера.
+В SetterDemoApp.java запускаем тест
+
+B31
+
+
+
 

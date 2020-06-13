@@ -22,6 +22,17 @@
     	<!-- set up constructor injection -->
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
+    
+    <bean id="myCricketCoath"
+    	class="org.sevod.springdemo.CricketCoach">
+   		
+   		<!-- set up setter injection -->
+   		<property name="fortuneService" ref="myFortune"></property>
+   		
+   		<!-- inject literal values -->
+   		<property name="emailAddress" value="thebestcoach@sevod.com"></property>
+   		<property name="team" value="Sunriser Hyderabad"></property>
+    </bean>
 
 
 </beans>
