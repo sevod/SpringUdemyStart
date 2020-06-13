@@ -118,6 +118,35 @@ B32
    		<!-- inject literal values -->
    		<property name="emailAddress" value="${foo.email}"></property>
    		<property name="team" value="${foo.team}"></property>
+		
+
+B33
+
+Bean Scopes:
+
+Default Scope: Singleton
+-singleton
+-prototype
+-request
+-session
+-global-session
+
+B34
+создадим для теста новый beanScope-applicationContext.xml и BeanScopeDemoApp
+
+B35
+протестируем для scope = prototype, изменив конфигурационный файл Спринга
+    <bean id="myCoach"
+    	class="org.sevod.springdemo.TrackCoach"
+    	scope="prototype">
+    	
+    	
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortune"></constructor-arg>
+    </bean>
+
+
+
 
 
 
