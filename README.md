@@ -57,7 +57,7 @@ B24 (не коммител)
 	
 B25
 В HelloSpringApp.java вызываем System.out.println(theCoach.getDailyFortune());
-
+-------------------------------------------------------------------------------------
 13.06.2020
 
 B26
@@ -78,7 +78,7 @@ B28
 "fortuneService" соответсвует названию set-ера "setFortuneService". Разница подставляется автоматически. ref="myFortune" это аргументы сетера. Берутся из нашего xml.
 Для примера с сетером создадим класс springdemo.
 
-
+------------------------------------------------------------------------------
 B29
 
 Injection Literal Values
@@ -101,6 +101,7 @@ B30
 name задает имена наших set методов. value значение аргументов сетера.
 В SetterDemoApp.java запускаем тест
 
+-----------------------------------------------------------------------------
 B31
 
 Injection Values frome Properties File
@@ -119,7 +120,7 @@ B32
    		<property name="emailAddress" value="${foo.email}"></property>
    		<property name="team" value="${foo.team}"></property>
 		
-
+------------------------------------------------------------------------------
 B33
 
 Bean Scopes:
@@ -144,8 +145,28 @@ B35
     	<!-- set up constructor injection -->
     	<constructor-arg ref="myFortune"></constructor-arg>
     </bean>
+----------------------------------------------------------------------------------
 
+14.06.2020
 
+B36
+
+-Bean Lifecycle
+--Init Method
+--Destroy Method
+
+B37
+
+В TrackCoach создадим новые методы 
+Скопируем для теста и создадим beanScope-applicationContext.xml
+
+В нужный нам бин добавляем
+
+init-method="doMyStartupStuff"
+    	destroy-method="doMyCleanupStuff"> 
+		
+Для теста копируем и создаем BeanLifeCycleDemoApp
+-----------------------------------------------------------------------------------------
 
 
 

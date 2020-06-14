@@ -16,8 +16,10 @@
     </bean>
     
     <bean id="myCoach"
-    	class="org.sevod.springdemo.TrackCoach"
-    	scope="prototype">    	
+    	class="org.sevod.springdemo.TrackCoach"    	
+    	init-method="doMyStartupStuff"
+    	destroy-method="doMyCleanupStuff">
+    	
     	
     	<!-- set up constructor injection -->
     	<constructor-arg ref="myFortune"></constructor-arg>
